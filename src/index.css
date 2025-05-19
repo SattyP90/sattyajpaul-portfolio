@@ -1,0 +1,9 @@
+/* You can keep your existing index.css or use this minimal version */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
