@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container">
-        <div className="logo">Sattyaj Paul</div>
+        <div className="logo">&lt;Sattyaj Paul/&gt;</div>
         <nav className={`nav ${isMenuOpen ? "active" : ""}`}>
           <ul className="nav-list">
             <li>
