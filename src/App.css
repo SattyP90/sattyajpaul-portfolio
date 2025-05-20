@@ -13,7 +13,7 @@
   --success-color: #28a745;
   --danger-color: #dc3545;
   --border-color: #dee2e6;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --box_shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
 }
 
@@ -51,7 +51,7 @@ img {
   position: sticky;
   top: 0;
   background-color: #fff;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box_shadow);
   z-index: 1000;
   padding: 15px 0;
 }
@@ -149,7 +149,7 @@ img {
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid #fff;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box_shadow);
 }
 
 .hero-text h1 {
@@ -168,6 +168,38 @@ img {
   color: var(--secondary-color);
   margin-bottom: 30px;
   max-width: 600px;
+}
+
+/* Typing Animation Styles */
+.typing-container {
+  min-height: 60px;
+  margin-bottom: 30px;
+}
+
+.typing-text {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: var(--dark-color);
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .hero-buttons {
@@ -237,7 +269,7 @@ img {
 .project-card {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box_shadow);
   transition: var(--transition);
 }
 
@@ -302,7 +334,7 @@ img {
   gap: 30px;
   padding: 25px;
   border-radius: 8px;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box_shadow);
   transition: var(--transition);
 }
 
@@ -381,7 +413,7 @@ img {
   gap: 20px;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box_shadow);
   transition: var(--transition);
 }
 
