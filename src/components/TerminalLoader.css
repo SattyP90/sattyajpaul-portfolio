@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "SF Mono";
+  src: url("https://cdn.jsdelivr.net/gh/shaunsingh/SFMono-Nerd-Font-Ligaturized@main/SFMono-Regular-Nerd-Font-Complete.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.terminal-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: block;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease-out forwards;
+  animation-play-state: paused;
+  animation-delay: 2s;
+}
+
+.terminal-content {
+  font-family: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
+  font-size: 11pt;
+  color: #fff;
+  line-height: 1.5;
+  white-space: nowrap;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.terminal-prompt {
+  color: #cccccc;
+}
+
+.terminal-text {
+  color: #ffffff;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background-color: #ffffff;
+  margin-left: 1px;
+  vertical-align: middle;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

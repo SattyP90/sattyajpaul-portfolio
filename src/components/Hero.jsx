@@ -97,7 +97,7 @@ export default function Hero() {
               <h1 className="typing-text">
                 Hi, I'm Sattyaj Paul.
                 <br /> I can {text}
-                <span className="cursor">|</span>
+                <span className="cursor">‎ </span>
               </h1>
             </div>
             <h2>Software Engineer</h2>

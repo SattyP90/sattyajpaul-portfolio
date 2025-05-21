@@ -1,4 +1,4 @@
-/* Typing Animation Styles */
+
 .typing-container {
     margin-bottom: 20px;
   }
@@ -28,7 +28,7 @@
     }
   }
   
-  /* Modal Styles */
+
   .modal-overlay {
     position: fixed;
     top: 0;

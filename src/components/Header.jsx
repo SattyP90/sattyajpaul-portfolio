@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container">
-        <div className="logo">&lt;Sattyaj Paul/&gt;</div>
+        <div className="logo">Sattyaj Paul</div>
         <nav className={`nav ${isMenuOpen ? "active" : ""}`}>
           <ul className="nav-list">
             <li>
@@ -43,7 +43,7 @@ export default function Header() {
           </ul>
         </nav>
         <div className="social-icons">
-          <a href="https://github.com/SattyP90" className="social-icon" aria-label="GitHub">
+          <a href="#" className="social-icon" aria-label="GitHub">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -59,7 +59,7 @@ export default function Header() {
               <path d="M9 18c-4.51 2-5-2-7-2"></path>
             </svg>
           </a>
-          <a href="https://www.linkedin.com/in/sattyaj-paul-621a40314/" className="social-icon" aria-label="LinkedIn">
+          <a href="#" className="social-icon" aria-label="LinkedIn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

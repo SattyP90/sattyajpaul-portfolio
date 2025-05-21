@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +22,51 @@ body {
   line-height: 1.6;
   color: var(--dark-color);
   background-color: #fff;
+}
+
+/* Animation Styles */
+.header-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+
+.content-wrapper {
+  width: 100%;
+}
+
+.header-hidden {
+  transform: translateY(-100%);
+}
+
+.content-hidden {
+  opacity: 0;
+}
+
+.header-animate-in {
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+.content-animate-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .container {
