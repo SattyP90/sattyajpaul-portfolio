@@ -15,19 +15,22 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [headerVisible, setHeaderVisible] = useState(false)
   const [contentVisible, setContentVisible] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false) // State for the modal
 
   const handleLoadComplete = () => {
     setLoading(false)
 
-    // Delay before header animation starts
     setTimeout(() => {
       setHeaderVisible(true)
 
-      // Delay before content appears
       setTimeout(() => {
         setContentVisible(true)
       }, 600)
     }, 200)
+  }
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen)
   }
 
   return (
@@ -35,12 +38,14 @@ function App() {
       {loading && <TerminalLoader onLoadComplete={handleLoadComplete} />}
 
       <div className={headerVisible ? "header-wrapper header-animate-in" : "header-wrapper header-hidden"}>
-        <Header />
+        {/* Pass the toggleModal function as a prop to Header */}
+        <Header toggleModal={toggleModal} />
       </div>
 
       <div className={contentVisible ? "content-wrapper content-animate-in" : "content-wrapper content-hidden"}>
         <main>
-          <Hero />
+          {/* Pass the state and function to the Hero component */}
+          <Hero isModalOpen={isModalOpen} toggleModal={toggleModal} />
           <Projects />
           <Education />
           <Skills />

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-export default function Header() {
+export default function Header({ toggleModal }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
@@ -43,7 +43,7 @@ export default function Header() {
           </ul>
         </nav>
         <div className="social-icons">
-          <a href="#" className="social-icon" aria-label="GitHub">
+          <a href="https://github.com/SattyP90" className="social-icon" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -59,7 +59,7 @@ export default function Header() {
               <path d="M9 18c-4.51 2-5-2-7-2"></path>
             </svg>
           </a>
-          <a href="#" className="social-icon" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/sattyaj-paul-621a40314/" className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -76,22 +76,22 @@ export default function Header() {
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a href="#" className="social-icon" aria-label="Email">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-            </svg>
-          </a>
+          <a href="#" className="social-icon" aria-label="Email" onClick={toggleModal}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+        </a>
         </div>
         <button
           className={`mobile-menu-btn ${isMenuOpen ? "active" : ""}`}
