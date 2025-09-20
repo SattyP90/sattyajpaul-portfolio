@@ -1,0 +1,164 @@
+/* src/components/Projects.css */
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  /* Add padding to the carousel container itself if you want space before the first/after the last card */
+  padding: 0 40px; /* Example: space for arrows or general padding */
+}
+
+.projects-grid {
+  display: flex;
+  overflow-x: hidden; /* Keep hidden for smooth programmatic scrolling */
+  scroll-snap-type: x mandatory; /* Keep for natural snapping if user drags */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  width: 100%;
+  /* Optional: Add some gap between cards within the grid */
+  gap: 20px; /* Adjust as needed */
+}
+
+.project-card {
+  /* Remove flex basis properties that force width */
+  /* flex: 0 0 auto; */
+  /* max-width: none; */
+
+  /* Set your desired fixed width and height or aspect ratio */
+  width: 300px; /* Example fixed width - ADJUST THIS TO YOUR ORIGINAL WIDTH */
+  min-width: 300px; /* Ensure it doesn't shrink */
+  height: 400px; /* Example fixed height - ADJUST THIS TO YOUR ORIGINAL HEIGHT */
+
+  box-sizing: border-box;
+  /* Removed padding from here as gap is used on projects-grid */
+  scroll-snap-align: start; /* Ensure cards snap correctly */
+
+  /* Add border, shadow, background, etc. for visual definition if you had it */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  display: flex; /* Often useful if content inside card needs flexbox */
+  flex-direction: column; /* Organize content vertically */
+}
+
+.project-image {
+  flex-shrink: 0; /* Prevent image from shrinking */
+  height: 200px; /* Or a fixed height, or aspect ratio */
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%; /* Ensure image fills its container */
+  object-fit: cover; /* Crop image nicely to fit */
+  display: block;
+}
+
+.project-content {
+  padding: 1rem;
+  flex-grow: 1; /* Allow content to take up remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.project-content p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allow description to push tags to bottom */
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto; /* Push tags to the bottom of the card */
+}
+
+.tag {
+  background-color: #e0e0e0;
+  padding: 0.3em 0.7em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+/* Carousel Arrows - keep as is, or adjust positioning */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 0.8rem; /* Slightly smaller padding for a sleeker look */
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem; /* Larger icon */
+  transition: background-color 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.left-arrow {
+  left: 5px; /* Adjust distance from edge */
+}
+
+.right-arrow {
+  right: 5px; /* Adjust distance from edge */
+}
+
+/* Optional: Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .project-card {
+    width: 280px;
+    min-width: 280px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    width: 250px;
+    min-width: 250px;
+    height: 350px;
+  }
+  .projects-grid {
+    gap: 15px;
+  }
+  .carousel-container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    width: 90vw; /* Take up most of the viewport width */
+    min-width: 90vw;
+    height: auto; /* Let height adjust naturally or set a max-height */
+  }
+  .projects-grid {
+    gap: 10px;
+  }
+  .carousel-container {
+    padding: 0 10px;
+  }
+  .carousel-arrow {
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+}
