@@ -52,7 +52,7 @@ export default function Projects() {
   }, [currentSlide])
 
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section fullpage-section">
       <div className="container">
         <h2 className="section-title">Projects</h2>
         <div className="carousel-container">

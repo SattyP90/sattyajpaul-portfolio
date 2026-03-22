@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-      <footer className="footer">
+      <footer className="footer fullpage-section">
         <div className="container">
           <div className="footer-content">
             <div className="copyright">© {new Date().getFullYear()} Sattyaj Paul. All rights reserved.</div>

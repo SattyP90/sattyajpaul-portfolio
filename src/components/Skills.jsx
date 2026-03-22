@@ -11,6 +11,18 @@ export default function Skills() {
       "HTML5",
       "CSS3",
       "Git",
+      "Docker",
+      "Neo4j",
+      "Makefiles",
+      "API Development",
+      "Kubernetes",
+      "Unity",
+      "Putty",
+      "SQL Workbench",
+      "JFrame",
+      "Turtle Graphics",
+      "Jest",
+      
     ]
   
     const softSkills = [
@@ -25,7 +37,7 @@ export default function Skills() {
     ]
   
     return (
-      <section id="skills" className="section">
+      <section id="skills" className="section fullpage-section">
         <div className="container">
           <h2 className="section-title">Skills</h2>
           <div className="skills-container">

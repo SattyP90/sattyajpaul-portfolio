@@ -24,7 +24,7 @@ export default function Education() {
     ]
   
     return (
-      <section id="education" className="section">
+      <section id="education" className="section fullpage-section">
         <div className="container">
           <h2 className="section-title">Education</h2>
           <div className="education-timeline">

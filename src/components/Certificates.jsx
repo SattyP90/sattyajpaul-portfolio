@@ -26,7 +26,7 @@ export default function Certificates() {
     ]
   
     return (
-      <section id="certificates" className="section">
+      <section id="certificates" className="section fullpage-section">
         <div className="container">
           <h2 className="section-title">Certificates</h2>
           <div className="certificates-grid">

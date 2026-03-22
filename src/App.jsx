@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Projects from "./components/Projects"
@@ -16,6 +16,8 @@ function App() {
   const [headerVisible, setHeaderVisible] = useState(false)
   const [contentVisible, setContentVisible] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false) // State for the modal
+  const [currentSection, setCurrentSection] = useState(0)
+  const [isScrolling, setIsScrolling] = useState(false)
 
   const handleLoadComplete = () => {
     setLoading(false)
@@ -32,6 +34,39 @@ function App() {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen)
   }
+
+  // Fullpage scroll functionality
+  useEffect(() => {
+    const sections = document.querySelectorAll('.fullpage-section')
+    
+    const handleWheel = (e) => {
+      if (isModalOpen) return // Don't scroll if modal is open
+      
+      e.preventDefault()
+      
+      if (isScrolling) return
+      setIsScrolling(true)
+      
+      const direction = e.deltaY > 0 ? 1 : -1
+      let nextSection = currentSection + direction
+      
+      // Clamp to valid section range
+      nextSection = Math.max(0, Math.min(nextSection, sections.length - 1))
+      
+      if (nextSection !== currentSection) {
+        setCurrentSection(nextSection)
+        sections[nextSection].scrollIntoView({ behavior: 'smooth' })
+      }
+      
+      setTimeout(() => setIsScrolling(false), 1000)
+    }
+    
+    window.addEventListener('wheel', handleWheel, { passive: false })
+    
+    return () => {
+      window.removeEventListener('wheel', handleWheel)
+    }
+  }, [currentSection, isScrolling, isModalOpen])
 
   return (
     <div className="portfolio-app">
